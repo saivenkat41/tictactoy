@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Player Details</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 1.1em;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border: 2px solid #feb47b;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff7e5f;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #feb47b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Player Details</h1>
+        <form id="playerForm">
+            <label for="player1">Player 1 Name:</label>
+            <input type="text" id="player1" name="player1" required>
+            <label for="player1Mark">Player 1 Mark (X or O):</label>
+            <select id="player1Mark" name="player1Mark">
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <label for="player2">Player 2 Name:</label>
+            <input type="text" id="player2" name="player2" required>
+            <label for="player2Mark">Player 2 Mark (X or O):</label>
+            <select id="player2Mark" name="player2Mark">
+                <option value="X">x</option>
+                <option value="O">O</option>
+            </select>
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('playerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const player1 = document.getElementById('player1').value;
+            const player1Mark = document.getElementById('player1Mark').value;
+            const player2 = document.getElementById('player2').value;
+            const player2Mark = document.getElementById('player2Mark').value;
+            const url = `index.html?player1=${player1}&player1Mark=${player1Mark}&player2=${player2}&player2Mark=${player2Mark}`;
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>

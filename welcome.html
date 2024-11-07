@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Tic Tac Toe</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .animated-text {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            transition: transform 0.3s;
+        }
+        .card h2 {
+            margin: 0 0 15px;
+            font-size: 1.5em;
+        }
+
+        .card button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ff7e5f;
+            color: white;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card button:hover {
+            background-color: #feb47b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="animated-text">Welcome to Tic Tac Toe Game</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>Human Players</h2>
+                <button onclick="window.location.href='details.html?mode=human'">Play</button>
+            </div>
+            <div class="card">
+                <h2>AI Player</h2>
+                <button onclick="window.location.href='index.html?mode=ai'">Play</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
